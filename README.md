@@ -1,5 +1,5 @@
 # intellij-document-instantiator
-plugin for intellij platform which:
+Plugin for intellij platform which:<br />
 1. compiles selected java file and its dependencies. <br />
 2. instantiates object of class of compiled file. <br />
 3. fills in fields by default and random values. <br />
