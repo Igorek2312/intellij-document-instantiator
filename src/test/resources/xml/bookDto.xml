@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bookDetailDto>
+    <authorItems>
+        <id>2</id>
+        <name>AuthorName1</name>
+        <registered>true</registered>
+        <surname>AuthorSurname1</surname>
+    </authorItems>
+    <authorItems>
+        <id>3</id>
+        <name>AuthorName2</name>
+        <registered>false</registered>
+        <surname>AuthorSurname2</surname>
+    </authorItems>
+    <id>1</id>
+    <mainAuthor>
+        <id>2</id>
+        <name>AuthorName1</name>
+        <registered>true</registered>
+        <surname>AuthorSurname1</surname>
+    </mainAuthor>
+    <name>Java8</name>
+    <pages>150</pages>
+    <year>2016</year>
+</bookDetailDto>

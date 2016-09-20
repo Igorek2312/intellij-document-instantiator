@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/document-instantiator.iml" filepath="$PROJECT_DIR$/.idea/modules/document-instantiator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/document-instantiator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/document-instantiator_main.iml" group="document-instantiator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/document-instantiator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/document-instantiator_test.iml" group="document-instantiator" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+{
+  "id" : 1,
+  "name" : "Java8",
+  "pages" : 150,
+  "year" : 2016,
+  "mainAuthor" : {
+    "id" : 2,
+    "name" : "AuthorName1",
+    "surname" : "AuthorSurname1",
+    "registered" : true
+  },
+  "authorItems" : [ {
+    "id" : 2,
+    "name" : "AuthorName1",
+    "surname" : "AuthorSurname1",
+    "registered" : true
+  }, {
+    "id" : 3,
+    "name" : "AuthorName2",
+    "surname" : "AuthorSurname2",
+    "registered" : false
+  } ]
+}
