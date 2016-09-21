@@ -9,7 +9,6 @@ import java.io.StringWriter;
  * Created by igorek2312 on 19.09.16.
  */
 public class JaxbDocumentConventer implements DocumentConventer {
-
     @Override
     public String convertFromPojo(Object o) throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(o.getClass());

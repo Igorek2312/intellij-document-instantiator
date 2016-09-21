@@ -21,7 +21,6 @@ public class ObjectInitializerimpl implements ObjectInitializer {
         return genericClass.newInstance();
     }
 
-
     @Override
     public void initializeObject(Object o) throws IllegalAccessException, InstantiationException {
         Field[] fields = o.getClass().getDeclaredFields();
