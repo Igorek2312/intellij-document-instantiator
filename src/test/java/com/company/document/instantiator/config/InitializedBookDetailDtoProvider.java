@@ -4,23 +4,24 @@ package com.company.document.instantiator.config;/*
  * Date: 21.09.16
  * Time: 11:45
  */
+
 import com.company.document.instantiator.model.AuthorItemDto;
 import com.company.document.instantiator.model.BookDetailDto;
 import com.google.inject.Provider;
 
 public class InitializedBookDetailDtoProvider implements Provider<BookDetailDto> {
     public BookDetailDto get() {
-        BookDetailDto bookDto=new BookDetailDto();
+        BookDetailDto bookDto = new BookDetailDto();
         bookDto.setId(1L);
         bookDto.setName("Java8");
         bookDto.setPages(150);
         bookDto.setYear(2016);
-        AuthorItemDto authorDto1=new AuthorItemDto();
+        AuthorItemDto authorDto1 = new AuthorItemDto();
         authorDto1.setId(2L);
         authorDto1.setName("AuthorName1");
         authorDto1.setSurname("AuthorSurname1");
         authorDto1.setRegistered(true);
-        AuthorItemDto authorDto2=new AuthorItemDto();
+        AuthorItemDto authorDto2 = new AuthorItemDto();
         authorDto2.setId(3L);
         authorDto2.setName("AuthorName2");
         authorDto2.setSurname("AuthorSurname2");

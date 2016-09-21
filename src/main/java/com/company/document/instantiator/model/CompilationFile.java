@@ -1,35 +1,18 @@
 package com.company.document.instantiator.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by igorek2312 on 19.09.16.
  */
 public class CompilationFile {
-    private String sourceRootPath;
-    private String projectFilePath;
     private String className;
-    private String workingPackagePath;
+    private Set<String> dependedFilesPaths = new HashSet<>();
+    private Set<String> dependedClassFilesPaths = new HashSet<>();
 
-    public CompilationFile(String sourceRootPath, String projectFilePath, String className, String workingPackagePath) {
-        this.sourceRootPath = sourceRootPath;
-        this.projectFilePath = projectFilePath;
+    public CompilationFile(String className) {
         this.className = className;
-        this.workingPackagePath = workingPackagePath;
-    }
-
-    public String getSourceRootPath() {
-        return sourceRootPath;
-    }
-
-    public void setSourceRootPath(String sourceRootPath) {
-        this.sourceRootPath = sourceRootPath;
-    }
-
-    public String getProjectFilePath() {
-        return projectFilePath;
-    }
-
-    public void setProjectFilePath(String projectFilePath) {
-        this.projectFilePath = projectFilePath;
     }
 
     public String getClassName() {
@@ -40,11 +23,19 @@ public class CompilationFile {
         this.className = className;
     }
 
-    public String getWorkingPackagePath() {
-        return workingPackagePath;
+    public Set<String> getDependedFilesPaths() {
+        return dependedFilesPaths;
     }
 
-    public void setWorkingPackagePath(String workingPackagePath) {
-        this.workingPackagePath = workingPackagePath;
+    public void setDependedFilesPaths(Set<String> dependedFilesPaths) {
+        this.dependedFilesPaths = dependedFilesPaths;
+    }
+
+    public Set<String> getDependedRootsPaths() {
+        return dependedClassFilesPaths;
+    }
+
+    public void setDependedClassFilesPaths(Set<String> dependedClassFilesPaths) {
+        this.dependedClassFilesPaths = dependedClassFilesPaths;
     }
 }

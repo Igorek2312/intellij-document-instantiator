@@ -2,7 +2,6 @@ package com.company.document.instantiator.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
 import java.util.ArrayList;
 import java.util.List;
 

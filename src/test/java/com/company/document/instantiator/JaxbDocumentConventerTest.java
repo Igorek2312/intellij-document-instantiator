@@ -5,6 +5,7 @@ import com.company.document.instantiator.config.InitializedBookDetailDtoProvider
 import com.company.document.instantiator.model.BookDetailDto;
 import com.company.document.instantiator.util.DocumentConventer;
 import com.company.document.instantiator.util.JaxbDocumentConventer;
+import com.google.common.io.Resources;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -17,8 +18,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 
@@ -45,14 +44,11 @@ public class JaxbDocumentConventerTest {
         injector = null;
     }
 
-
     private String xmlForSample() throws IOException, URISyntaxException {
-        URL xmlUrl = Thread.currentThread().getContextClassLoader().getResource("xml/bookDto.xml");
-        byte[] bytes = Files.readAllBytes(Paths.get(xmlUrl.toURI()));
-        String xml = new String(bytes, Charset.forName("UTF-8"));
+        URL url = Resources.getResource("xml/bookDto.xml");
+        String xml = Resources.toString(url, Charset.forName("UTF-8"));
         return xml;
     }
-
 
     @Test
     public void testConvertToXml() throws JAXBException, IOException, URISyntaxException {
@@ -61,7 +57,7 @@ public class JaxbDocumentConventerTest {
         BookDetailDto dto = config.getInitializeBookDetailDto();
         String sampleXml = xmlForSample();
         String xml = conventer.convertFromPojo(dto);
-        assertEquals(sampleXml.trim(),xml.trim());
+        assertEquals(sampleXml.trim(), xml.trim());
 
     }
 

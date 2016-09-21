@@ -5,6 +5,7 @@ import com.company.document.instantiator.config.InitializedBookDetailDtoProvider
 import com.company.document.instantiator.model.BookDetailDto;
 import com.company.document.instantiator.util.DocumentConventer;
 import com.company.document.instantiator.util.JacksonDocumentConventer;
+import com.google.common.io.Resources;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -17,8 +18,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,19 +45,18 @@ public class JacksonDocumentConventerTest {
     }
 
     private String jsonForSample() throws IOException, URISyntaxException {
-        URL jsonUrl = Thread.currentThread().getContextClassLoader().getResource("json/bookDto.json");
-        byte[] bytes = Files.readAllBytes(Paths.get(jsonUrl.toURI()));
-        String json = new String(bytes, Charset.forName("UTF-8"));
+        URL url = Resources.getResource("json/bookDto.json");
+        String json = Resources.toString(url, Charset.forName("UTF-8"));
         return json;
     }
 
     @Test
     public void testConvertToJson() throws JAXBException, IOException, URISyntaxException {
         DocumentConventerConfig config = injector.getInstance(DocumentConventerConfig.class);
-        DocumentConventer conventer=config.getDocumentConventer();
-        Object dto =config.getInitializeBookDetailDto();
+        DocumentConventer conventer = config.getDocumentConventer();
+        Object dto = config.getInitializeBookDetailDto();
         String sampleJson = jsonForSample();
         String json = conventer.convertFromPojo(dto);
-        assertEquals(json.trim(),sampleJson.trim());
+        assertEquals(json.trim(), sampleJson.trim());
     }
 }

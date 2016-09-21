@@ -10,7 +10,7 @@ import java.util.Random;
  * Created by igorek2312 on 17.09.16.
  */
 @SuppressWarnings("unchecked")
-public class ObjectInitializerimpl implements ObjectInitializer {
+public class ObjectInitializerImpl implements ObjectInitializer {
     private Random random = new Random();
 
     private Object getGenericClassInstance(Field field, int genericIndex) throws IllegalAccessException, InstantiationException {

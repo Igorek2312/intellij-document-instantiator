@@ -9,8 +9,6 @@ public class InstantiateXmlAction extends InstantiateDocumentAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         super.actionPerformed(e);
-
-
     }
 
 }

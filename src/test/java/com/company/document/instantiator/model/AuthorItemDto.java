@@ -1,10 +1,5 @@
 package com.company.document.instantiator.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
-
 /**
  * Created by igorek2312 on 14.09.16.
  */
