@@ -21,8 +21,11 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.jetbrains.intellij'
 
-sourceCompatibility = javaVersion
-targetCompatibility = javaTargetVersion
+
+group = projectGroup
+version = projectVersion
+sourceCompatibility = projectSourceCompatibility
+targetCompatibility = projectTargetCompatibility
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -32,7 +35,7 @@ repositories {
 intellij {
     pluginName = 'document-instantiator'
 
-    version = ideaVersion
+    version = projectIdeaVersion
 
     /*publish {
         username publishUsername

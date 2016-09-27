@@ -29,10 +29,10 @@
   </extensions>
 
   <actions>
-    <action id="DocumentInstantiator.InstantiateJson" class="com.company.document.instantiator.actions.InstantiateJsonAction" text="Instantiate _JSON using Jackson" description="Instantiate JSON from POJO using Jackson">
+    <action id="DocumentInstantiator.InstantiateJson" class="com.rybakigor.document.instantiator.actions.InstantiateJsonAction" text="Instantiate _JSON using Jackson" description="Instantiate JSON from POJO using Jackson">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
     </action>
-    <action id="DocumentInstantiator.InstantiateXml" class="com.company.document.instantiator.actions.InstantiateXmlAction" text="Instantiate _XML using JAXB" description="Instantiate XML from POJO using JAXB">
+    <action id="DocumentInstantiator.InstantiateXml" class="com.rybakigor.document.instantiator.actions.InstantiateXmlAction" text="Instantiate _XML using JAXB" description="Instantiate XML from POJO using JAXB">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
     </action>
   </actions>

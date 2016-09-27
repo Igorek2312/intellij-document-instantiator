@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="document-instanciator_main" target="1.8" />
+      <module name="document-instanciator_test" target="1.8" />
       <module name="document-instantiator_main" target="1.8" />
       <module name="document-instantiator_test" target="1.8" />
     </bytecodeTargetLevel>
