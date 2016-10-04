@@ -8,6 +8,7 @@ package com.rybakigor.document.instantiator.config;/*
 import com.rybakigor.document.instantiator.model.AuthorItemDto;
 import com.rybakigor.document.instantiator.model.BookDetailDto;
 import com.google.inject.Provider;
+import com.rybakigor.document.instantiator.model.Genre;
 
 public class InitializedBookDetailDtoProvider implements Provider<BookDetailDto> {
     public BookDetailDto get() {
@@ -16,6 +17,8 @@ public class InitializedBookDetailDtoProvider implements Provider<BookDetailDto>
         bookDto.setName("Java8");
         bookDto.setPages(150);
         bookDto.setYear(2016);
+        bookDto.getGenres().add(Genre.NonFiction);
+        bookDto.getGenres().add(Genre.Comedy);
         AuthorItemDto authorDto1 = new AuthorItemDto();
         authorDto1.setId(2L);
         authorDto1.setName("AuthorName1");

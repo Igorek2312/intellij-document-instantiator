@@ -18,11 +18,12 @@ public class BookDetailDto {
 
     private Integer year;
 
-
     private AuthorItemDto mainAuthor;
 
+    private List<Genre> genres = new ArrayList<>();
+
     @XmlElement
-    private List<AuthorItemDto> authorItems =new ArrayList<>();
+    private List<AuthorItemDto> authorItems = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -70,5 +71,13 @@ public class BookDetailDto {
 
     public void setMainAuthor(AuthorItemDto mainAuthor) {
         this.mainAuthor = mainAuthor;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
     }
 }

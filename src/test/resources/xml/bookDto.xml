@@ -12,6 +12,8 @@
         <registered>false</registered>
         <surname>AuthorSurname2</surname>
     </authorItems>
+    <genres>NonFiction</genres>
+    <genres>Comedy</genres>
     <id>1</id>
     <mainAuthor>
         <id>2</id>

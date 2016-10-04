@@ -27,7 +27,7 @@ public abstract class InstantiateDocumentAction extends AnAction {
                 .map(VirtualFile::getExtension)
                 .map(extension -> extension.equals("java"))
                 .ifPresent(present -> e.getPresentation()
-                .setEnabledAndVisible(present));
+                        .setEnabledAndVisible(present));
     }
 
     @Override
@@ -82,7 +82,7 @@ public abstract class InstantiateDocumentAction extends AnAction {
             ClipboardUtil.getInstance().copyToClipBoard(document);
             Messages.showMessageDialog(project, successMessage, "Inforamtion", Messages.getInformationIcon());
         } catch (InstantiationException e1) {
-            Messages.showMessageDialog(project, "The class cannot be instantiated", "Error", Messages.getErrorIcon());
+            Messages.showMessageDialog(project, "The class: " + e1.getMessage() + " cannot be instantiated.", "Error", Messages.getErrorIcon());
             e1.printStackTrace();
         } catch (JAXBException e1) {
             if (e1.getLinkedException() != null)

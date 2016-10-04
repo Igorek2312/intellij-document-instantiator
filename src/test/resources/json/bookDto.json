@@ -9,6 +9,7 @@
     "surname" : "AuthorSurname1",
     "registered" : true
   },
+  "genres" : [ "NonFiction", "Comedy" ],
   "authorItems" : [ {
     "id" : 2,
     "name" : "AuthorName1",

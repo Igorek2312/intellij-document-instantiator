@@ -58,7 +58,6 @@ public class JaxbDocumentConventerTest {
         String sampleXml = xmlForSample();
         String xml = conventer.convertFromPojo(dto);
         assertEquals(sampleXml.trim(), xml.trim());
-
     }
 
 }
