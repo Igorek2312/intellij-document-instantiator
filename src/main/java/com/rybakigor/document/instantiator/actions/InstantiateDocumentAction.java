@@ -23,11 +23,16 @@ public abstract class InstantiateDocumentAction extends AnAction {
 
     @Override
     public void update(AnActionEvent e) {
-        Optional.of(e.getData(CommonDataKeys.VIRTUAL_FILE))
+        Optional<Boolean> isJavaFile = Optional.ofNullable(e)
+                .map(event -> event.getData(CommonDataKeys.VIRTUAL_FILE))
                 .map(VirtualFile::getExtension)
-                .map(extension -> extension.equals("java"))
-                .ifPresent(present -> e.getPresentation()
-                        .setEnabledAndVisible(present));
+                .map(extension -> extension.equalsIgnoreCase("java"));
+
+        Boolean enabledAndVisible = isJavaFile
+                .orElse(false);
+
+        Optional.ofNullable(e)
+                .ifPresent(event -> e.getPresentation().setEnabledAndVisible(enabledAndVisible));
     }
 
     @Override
