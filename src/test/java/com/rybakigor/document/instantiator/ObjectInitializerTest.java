@@ -1,6 +1,5 @@
 package com.rybakigor.document.instantiator;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rybakigor.document.instantiator.model.AuthorItemDto;
 import com.rybakigor.document.instantiator.model.BookDetailDto;
 import com.rybakigor.document.instantiator.model.Foo;
@@ -10,7 +9,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBException;
-
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
@@ -22,7 +20,7 @@ import static org.junit.Assert.assertNotNull;
 public class ObjectInitializerTest {
 
     @Test
-    public void testInitializeObject() throws InstantiationException, IllegalAccessException, JAXBException, JsonProcessingException {
+    public void testInitializeObject() throws InstantiationException, IllegalAccessException, JAXBException {
         ObjectInitializer initializer = new ObjectInitializerImpl();
         BookDetailDto dto = new BookDetailDto();
         initializer.initializeObject(dto);

@@ -1,14 +1,14 @@
 package com.rybakigor.document.instantiator;
 
+import com.google.common.io.Resources;
+import com.google.inject.AbstractModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import com.rybakigor.document.instantiator.config.DocumentConventerConfig;
 import com.rybakigor.document.instantiator.config.InitializedBookDetailDtoProvider;
 import com.rybakigor.document.instantiator.model.BookDetailDto;
 import com.rybakigor.document.instantiator.util.DocumentConventer;
 import com.rybakigor.document.instantiator.util.JacksonDocumentConventer;
-import com.google.common.io.Resources;
-import com.google.inject.AbstractModule;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

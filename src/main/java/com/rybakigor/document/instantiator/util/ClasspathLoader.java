@@ -18,8 +18,8 @@ public interface ClasspathLoader extends Closeable {
 
     @Override
     default void close() throws IOException {
-        getDependedFilePaths().stream().map(s -> new File(s + ".class")).forEach(
-                File::delete
-        );
+        getDependedFilePaths().stream()
+                .map(File::new)
+                .forEach(File::delete);
     }
 }

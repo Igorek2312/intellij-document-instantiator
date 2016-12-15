@@ -5,9 +5,9 @@ package com.rybakigor.document.instantiator.config;/*
  * Time: 11:45
  */
 
+import com.google.inject.Provider;
 import com.rybakigor.document.instantiator.model.AuthorItemDto;
 import com.rybakigor.document.instantiator.model.BookDetailDto;
-import com.google.inject.Provider;
 import com.rybakigor.document.instantiator.model.Genre;
 
 public class InitializedBookDetailDtoProvider implements Provider<BookDetailDto> {

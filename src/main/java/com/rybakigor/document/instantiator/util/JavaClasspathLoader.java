@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by igorek2312 on 17.09.16.
@@ -25,15 +26,12 @@ public class JavaClasspathLoader implements ClasspathLoader {
 
     @Override
     public Object compileAndInstantiate() throws ClassNotFoundException, MalformedURLException, IllegalAccessException, InstantiationException, CompilationException {
-        // Compile source file.
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
-        String[] arguments = compilationFile.getDependedFilesPaths().stream().map(s -> s + ".java")
-                .toArray(String[]::new);
-
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        compiler.run(null, null, outputStream, arguments);
-        byte[] bytes = outputStream.toByteArray();
+        ByteArrayOutputStream errorOutputStream = new ByteArrayOutputStream();
+        String[] arguments = compilationFile.toCompilerArgs();
+        compiler.run(null, null, errorOutputStream, arguments);
+        byte[] bytes = errorOutputStream.toByteArray();
         String errors = new String(bytes);
         if (!errors.isEmpty())
             throw new CompilationException(errors);
@@ -57,8 +55,10 @@ public class JavaClasspathLoader implements ClasspathLoader {
 
     @Override
     public Set<String> getDependedFilePaths() {
-        return compilationFile.getDependedFilesPaths();
+        return compilationFile.getDependedFilesPaths().stream()
+                .filter(s -> s.endsWith(".java"))
+                .map(s -> s.replace(".java", ".class"))
+                .collect(Collectors.toSet());
     }
-
 
 }
